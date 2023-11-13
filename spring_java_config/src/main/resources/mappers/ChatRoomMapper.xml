@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        
+ <mapper namespace="com.myweb.www.repository.ChatRoomDAO">
+ 
+	 <insert id="init">
+	 	insert into chatroom(chatroom_roomid , chatroom_sendid , chatroom_recvid)
+		values (#{chatroomRoomid} , #{chatroomSendid} , #{chatroomRecvid})
+	 </insert>
+	 <select id="getMaster" resultType="com.myweb.www.domain.ChatRoomVO">
+		select * from chatroom where chatroom_roomid=#{chatroomRoomid}
+	</select>
+	<select id="list" resultType="com.myweb.www.domain.ChatRoomVO">
+		select * from chatroom where chatroom_sendid=#{chatroomSendid}
+	</select>
+	<select id="listmaster" resultType="com.myweb.www.domain.ChatRoomVO">
+		select * from chatroom where chatroom_recvid=#{chatroomRecvid}
+	</select>
+ 	<insert id="postChat">
+ 	insert into chatmessage (chatmessage_roomid,chatmessage_writer,chatmessage_message,chatmessage_send_time,chatmessage_read_check,chatmessage_send_day,chatmessage_send_name,chatmessage_recv_name)
+	values (#{chatmessageRoomid},#{chatmessageWriter},#{chatmessageMessage},#{chatmessageSendTime},#{chatmessageReadCheck},#{chatmessageSendDay},#{chatmessageSendName},#{chatmessageRecvName})
+ 	</insert>
+ 	<select id="getlist" resultType="com.myweb.www.domain.ChatMessageVO">
+ 		select * from chatmessage where chatmessage_roomid=#{chatroomRoomid} order by chatmessage_num ASC
+ 	</select>
+ 	<select id="getUser" resultType="com.myweb.www.domain.ChatRoomVO">
+ 		select * from chatroom where chatroom_roomid=#{chatroomRoomid}
+ 	</select>
+ 	<delete id="deleteRoom">
+ 		delete from chatroom where chatroom_roomid=#{chatroomRoomid}
+ 	</delete>
+ 	<update id="modifyreadCheck" parameterType="com.myweb.www.domain.ChatMessageVO">
+ 		update chatmessage set chatmessage_read_check = #{chatmessageReadCheck} where chatmessage_roomid=#{chatmessageRoomid}
+ 	</update>
+ 	<select id="getLastMsg" parameterType="String" resultType="String">
+ 	  select chatmessage_message from chatmessage where chatmessage_roomid = #{chatroomRoomid} order by chatmessage_num desc limit 1;
+ 	</select>
+ 	<select id="getReadCount" resultType="int">
+ 		select count(chatmessage_read_check) from chatmessage where chatmessage_roomid = #{chatroomRoomid} and chatmessage_read_check ="1";
+ 	</select>
+ 	
+ </mapper>

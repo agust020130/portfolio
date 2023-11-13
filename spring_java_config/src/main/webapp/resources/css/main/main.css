@@ -1,0 +1,861 @@
+/*---------------- 메인 영역 -----------------*/
+.main_box {
+    width: 970px;
+    margin: auto;
+}
+
+@font-face {
+    font-family: 'KBO-Dia-Gothic_bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/KBO-Dia-Gothic_bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+/*--------------- 이미지 슬라이드 영역 -------------*/
+.slide_wrap {
+    width: 970px;
+    height: 280px;
+    margin: auto;
+    border-radius: 15px;
+    position: relative;
+}
+
+.slide_box {
+    width: 970px;
+    height: 280px;
+    margin: auto;
+    overflow: hidden;
+    margin-top: 20px;
+    border-radius: 15px;
+}
+
+.slide_list {
+    width: 7760px;
+    transform: translate3d(-970px, 0px, 0px);
+}
+
+.slide_content {
+    display: table;
+    float: left;
+    width: 970px;
+    height: 280px
+}
+
+.slide_content img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.slide_pagination {
+    display: flex;
+    width: 140px;
+    height: 30px;
+    position: absolute;
+    left: 45%;
+    bottom: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.slide_pagination .dot {
+    width: 12px;
+    height: 12px;
+    margin: 0 5px;
+    background: #bebebe96;
+    border-radius: 50%;
+    transition: 0.9s;
+    cursor: pointer;
+    display: none;
+}
+
+.controller {
+    display: flex;
+    width: 930px;
+    height: 40px;
+    margin: auto;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 45%;
+    left: 20px;
+}
+
+.controller button {
+    border: none;
+    background-color: transparent;
+    background-color: rgba(124, 124, 124, 0.315);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: none;
+    cursor: pointer;
+}
+
+.controller img {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.slide_wrap:hover button {
+    display: block;
+}
+
+.slide_wrap:hover li {
+    display: block;
+}
+
+.dot_active{
+    background-color: #d63333;
+    color: #fff;
+}
+
+
+/*------아이콘 리스트 영역-------*/
+.icon_box {
+    position: relative;
+    width: 970px;
+    height: 180px;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.icon_list {
+    top: 20px;
+    width: 800px;
+    height: 60px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    z-index: 1;
+    position: absolute;
+    left: 7%;
+}
+
+.icon {
+    width: 90px;
+    height: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.icon_list img {
+    width: 60px;
+    margin-right: 30px;
+    margin-left: 30px;
+}
+
+.icon span {
+    font-weight: bold;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.grbg {
+    margin: auto;
+    position: absolute;
+    top: 0;
+}
+
+.icon:hover {
+    background-color: rgba(212, 212, 212, 0.479);
+    border-radius: 10px;
+    width: 90px;
+    height: 90px;
+    margin-top: 0px;
+}
+
+
+
+/*------서비스 커뮤니티 영역-------*/
+.service_box {
+    width: 970px;
+    height: 60px;
+    position: relative;
+}
+
+.service_line {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.service_text span {
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.line_on {
+    position: absolute;
+    top: 40px;
+    display: none;
+}
+
+.line_ht {
+    display: none;
+}
+
+.line_htt {
+    display: none;
+}
+
+.service_text {
+    display: flex;
+    width: 800px;
+    /* border: 1px solid black; */
+    justify-content: space-evenly;
+    align-items: center;
+    margin: auto;
+    position: absolute;
+    left: 77px;
+    top: 10px;
+}
+
+.service_text button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.pop_left_btn img {
+    margin-right: 3px;
+}
+
+.pop_right_btn img {
+    margin-left: 3px;
+}
+
+
+
+
+/*----------- 인기 서비스 영역 -----------*/
+.popular_service {
+    width: 970px;
+    height: 210px;
+    align-items: center;
+    position: relative;
+}
+
+.popslide {
+    overflow: hidden;
+    margin-top: 40px;
+}
+
+.popsvc_list {
+    display: flex;
+    transition: transform 400ms;
+}
+
+.popsvc_box {
+    width: 231px;
+    margin-right: 15px;
+}
+
+.popsvc_box img {
+    width: 15px;
+}
+
+.popsvc_img img {
+    width: 230.8px;
+    height: 150px;
+    border-radius: 10px;
+}
+
+.popsvc_text {
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+.title {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+.content p {
+    margin-left: 7px;
+}
+
+.popscv_controller {
+    display: flex;
+    justify-content: space-between;
+    width: 1010px;
+    top: 55px;
+    left: -20px;
+    position: absolute;
+}
+
+.popscv_controller button {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 0 3px 1px rgb(163, 163, 163);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.popscv_controller img {
+    width: 15px;
+    height: 15px;
+    filter: opacity(0.5);
+}
+
+
+
+
+
+/*------- 이젠고 이야기 영역 --------*/
+
+.ezengo_story {
+    display: flex;
+    transition: transform 400ms;
+}
+
+.storyslide {
+    width: 970px;
+    overflow: hidden;
+    display: none;
+    margin-top: 40px;
+}
+
+.story_box {
+    width: 231px;
+    margin-right: 15px;
+}
+
+.story_img img {
+    width: 230.8px;
+    height: 150px;
+    border-radius: 10px;
+}
+
+.gosu_know-how {
+    display: flex;
+}
+
+.story_text {
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+.stitle {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+
+
+
+/*------- 인기 고수 리스트 영역 ---------*/
+
+.gosu_know_how {
+    display: flex;
+    transition: transform 400ms;
+}
+
+.knowhowslide {
+    width: 970px;
+    overflow: hidden;
+    display: none;
+    margin-top: 40px;
+}
+
+.gosu_box {
+    width: 230.9px;
+    height: 200px;
+    margin-right: 15px;
+}
+
+.gtitle {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.gcontent {
+    margin-top: 5px;
+    font-size: 13px;
+}
+
+
+
+/*------- 지금 인기 있는 고수 리스트 -------*/
+
+.hotgosu {
+    width: 970px;
+    height: 320px;
+    margin-top: 120px;
+    position: relative;
+}
+
+.hottitle {
+    display: flex;
+    align-items: center;
+}
+
+.hottitle span {
+    margin: auto;
+    font-size: 30px;
+    font-weight: bold;
+    margin-left: 380px;
+}
+
+.hottitle p {
+    font-size: 16px;
+    font-weight: bold;
+    color: #00C7AE;
+    margin-right: 10px;
+}
+
+.hotbtn {
+    margin-top: 30px;
+    display: flex;
+    width: 970px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+}
+
+.hot_left_btn{
+	visibility: hidden;
+}
+.hotbtn button {
+    width: 90px;
+    height: 35px;
+    font-weight: bold;
+    margin: 0 5px 0 5px;
+    cursor: pointer;
+    border-radius: 10px;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+.hotbtn button:hover {
+    background-color: #999;
+}
+
+.hotbtn button.clicked {
+    background-color: #00C7AE;
+    color: #ffffff;
+}
+
+
+
+
+/*--------- 슬라이드 이동 아이콘 --------*/
+.hotgosu_controller{
+    display: flex;
+    justify-content: space-between;
+    width: 1010px;   
+    top: 65%;
+    left: -20px;
+    position: absolute;
+}
+
+.hotgosu_controller button{
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 0 3px 1px rgb(163, 163, 163);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hotgosu_controller img {
+    width: 15px;
+    height: 15px;
+    filter: opacity(0.5);
+}
+
+
+
+/*------- 슬라이드 메인 박스 ---------*/
+.hotmainbox{
+    width: 177.6px;
+    height: 177.6px;
+    border-radius: 10px;
+    background: #E6E6E6;    
+    margin-right: 20px;
+}    
+
+.hoticon{
+    margin-left: 15px;
+    margin-top: 15px;
+}
+
+.hoticon img{
+    width: 60px;
+    height: 60px;
+}
+
+.hotcontent {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.hotcontent p{
+    font-weight: bold;
+    font-size: 17px;
+    margin-top: 5px;
+}
+
+.hotcontent span{
+    color: blue;
+}
+
+
+
+/*------- 슬라이드 서브 박스 --------*/
+.hotsubicon{
+    margin-left: 15px;
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.hotsubicon img {
+    width: 60px;
+    height: 60px;
+}
+
+.besticon{
+    background-color: #ffd700;
+    width: 50px;
+    height: 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin-right: 20px;
+    margin-top: 5px;
+}
+
+.besticon span{
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.payicon{
+    background-color: #D1DDFB;
+    width: 72px;
+    height: 23px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+    margin-bottom: 13px;
+}
+
+.payicon img{
+    margin-left: 5px;
+    margin-right: 3px;
+    width: 16px;
+}
+
+.payicon span{
+    font-size: 13px;
+    font-weight: bold;
+    color: #5080FA;
+}
+
+.gosuname {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.gosuprofile{
+    font-size: 10px;
+    font-weight: bold;
+    color: #999;
+}
+
+.hotsubcontent{
+    margin-left: 15px;
+    margin-top: 10px;
+}
+
+
+
+
+/*---------카테고리 슬라이드 1 ---------*/
+.hotgosu_slidebox{
+    width: 970px;
+    height: 200px;
+    margin-top: 30px;
+    overflow: hidden;
+}
+
+.lessonslide{    
+    width: 2300px;   
+}
+
+.lesson_list{
+    display: flex;
+    transition: transform 400ms;    
+}
+#lessonlist{
+	display: flex;
+    transition: transform 400ms;    
+}
+
+.lessonbox{
+    width: 177.6px;
+    height: 177.6px;
+    border-radius: 10px;
+    background: #F5F5F5;
+    margin-right: 20px;
+}
+
+
+
+/*---------카테고리 슬라이드 2 ---------*/
+.home_livingslide{    
+    width: 2300px; 
+    display: none;
+}
+
+.home_living_list{
+    display: flex;
+    transition: transform 400ms;
+}
+
+.home_livingbox{
+    width: 177.6px;
+    height: 177.6px;
+    border-radius: 10px;
+    background: #F5F5F5;
+    margin-right: 20px;
+}
+
+
+/*---------카테고리 슬라이드 3 ---------*/
+.eventslide{    
+    width: 2300px; 
+    display: none;
+}
+
+.event_list{
+    display: flex;
+    transition: transform 400ms;
+}
+
+.eventbox{
+    width: 177.6px;
+    height: 177.6px;
+    border-radius: 10px;
+    background: #F5F5F5;
+    margin-right: 20px;
+}
+
+
+
+/*---------카테고리 슬라이드 4 ---------*/
+.businessslide{    
+    width: 2300px; 
+    display: none;
+}
+
+.business_list{
+    display: flex;
+    transition: transform 400ms;
+}
+
+.businessbox{
+    width: 177.6px;
+    height: 177.6px;
+    border-radius: 10px;
+    background: #F5F5F5;
+    margin-right: 20px;
+}
+
+
+
+/*---------카테고리 슬라이드 5 ---------*/
+.designslide{    
+    width: 2300px; 
+    display: none;
+}
+
+.design_list{
+    display: flex;
+    transition: transform 400ms;
+}
+
+.designbox{
+    width: 177.6px;
+    height: 177.6px;
+    border-radius: 10px;
+    background: #F5F5F5;
+    margin-right: 20px;
+}
+
+
+
+
+/*------- 중간 이미지 영역 --------*/
+.middleimg{
+    width: 970px;
+    margin-top: 80px;
+}
+
+.middleimg img{
+    width: 970px;
+}
+
+
+/*---- 전국 숨은 고수 영역 -----*/
+.NationGosu{
+    width: 970px; 
+    height: 250px;
+    margin-top: 80px;
+}
+
+.NationContent{
+    text-align:  center;
+    margin-bottom: 40px;
+}
+
+.NationContent p{
+    font-weight:  bold;
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.NationContent span{
+    font-size: 16px;
+    color: #999;
+}
+
+.NationBtn_box{
+    width: 800px;
+    height: 30px;
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 30px;
+}
+
+.NationBtn_box2{
+    width: 680px;
+    height: 30px;
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.NationBtn{
+    width: 60px;
+    height: 30px;
+    background: #CDFFFC;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #00C7AE;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+
+
+
+/*----- 하단 고수 가입 영역 ------*/
+.GosuJoin{
+    width: 970px;
+    height: 500px;
+    margin-top: 70px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.JoinContent{
+    width: 400px;
+    height: 300px;
+}
+
+.JoinSlideBox{
+    margin-top: 5px;
+    width: 650px;
+    height: 380px;
+    background-color: #efefef;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.JoinContent p {
+    font-weight: bold;
+    font-size: 30px;
+    margin-bottom: 5px;
+    font-family: 'KBO-Dia-Gothic_bold';
+}
+
+.JoinBtn{
+    margin-top: 30px;
+    width: 150px;
+    height: 50px;
+    background-color: #00C7AE;
+    border-radius: 8px;
+    font-weight: bold;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-size:20px;
+}
+
+
+/*----- 고수가입 슬라이드 -------*/
+.JoinSlide{
+    width: 304px;
+    overflow: hidden;
+}
+
+.JoinList{
+    display: flex;
+    transition: transform 400ms;
+}
+
+.Listbox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.Listbox p{
+    margin-top: 40px;
+    font-weight: bold;
+    font-size: 15px;
+    color: #767676;
+}
+
+.Join_controller{
+    position: absolute;
+    width: 540px;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    left: 30px;
+    top: 45%;
+}
+
+.Join_controller button {
+    border:  none;
+    cursor: pointer;
+    background-color: transparent;
+    font-size: 22px;
+    color: rgb(155, 155, 155);
+}

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        
+ <mapper namespace="com.myweb.www.repository.MasterDAO">
+ 
+ 	<select id="getMaster" resultType="com.myweb.www.domain.MasterVO">
+ 		select * from master where master_num = #{masterNum}
+ 	</select>
+ 
+ 	<select id="getMasterNum">
+ 		select chatroom_recvid from chatroom where chatroom_roomid=#{chatroomRoomid}
+ 	</select>
+ 	
+ 	<select id="loginAuth" resultType="com.myweb.www.domain.MasterVO">
+		select * from master where
+		master_email = #{masterEmail} and master_pw = #{masterPw}
+	</select>
+	<!--이메일체크 -->
+	<select id="emailCheck" parameterType="String" resultType="int">
+		SELECT COUNT(master_email) FROM master WHERE master_email= #{userEmail}
+	</select>
+	<update id="updateNameMaster">
+		update master set master_name = #{masterName} where master_num = #{masterNum} 
+	</update>
+	<update id="updateMasterCategory">
+		update master set master_category_code = #{masterCategoryCode} where master_num =#{masterNum}
+	</update>
+	<update id="updateIntroMaster">
+		update master set master_intro = #{masterIntro} where master_num =#{masterNum}
+	</update>
+	<update id="updateDesir">
+		update master set master_desireregion = #{masterDesireregion} where master_num =#{masterNum}
+	</update>
+	<update id="updateTime">
+		update master set master_time = #{masterTime} where master_num =#{masterNum}
+	</update>
+	<update id="updateSize">
+		update master set master_size = #{masterSize} where master_num =#{masterNum}
+	</update>
+	
+	<select id="getTotalCount" resultType="String">
+		select count(master_num) from master where master_up_categorycode = #{masterUpCategorycode} ;
+	</select>
+	<select id="getList" resultType="com.myweb.www.domain.MasterVO">
+		select * from master where master_up_categorycode = #{masterUpCategorycode};
+	</select>
+	<insert id="register">
+		insert into master(master_up_categorycode, master_category_code, master_gender, master_email , master_pw , master_name , master_phone)
+		values (#{masterUpCategorycode}, #{masterCategoryCode} , #{masterGender} , #{masterEmail} , #{masterPw}, #{masterName}, #{masterPhone})
+	</insert>
+	<select id="selectList" resultType="mvo">
+		SELECT * FROM master where master_up_categorycode = #{estimateUpCategoryCode} and master_category_code like '%${estimateCategoryCode}%'
+	</select>
+	
+ </mapper>
